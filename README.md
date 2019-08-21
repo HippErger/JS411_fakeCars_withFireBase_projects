@@ -1,7 +1,3 @@
-## !! INSTRUCTOR REPO !!
-
-This project should be complete and fully executable
-
 ## Setup
 
 Clone this repo and run `npm i` and then `npm start`
