@@ -4,7 +4,7 @@ import {
   TextField,
   Button,
   Container
-} from '@material-ui/core'
+} from '@mui/material'
 
 class App extends Component {
   state = {
