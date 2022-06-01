@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardContent, CardActions, Divider } from '@material-ui/core'
+import { Card, CardContent, CardActions, Divider } from '@mui/material'
 import cars from '../cars.json'
 import { Link } from 'react-router-dom'
 

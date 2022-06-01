@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Divider, Switch } from '@material-ui/core'
+import { Container, Divider, Switch } from '@mui/material'
 
 class About extends Component {
     state = {
