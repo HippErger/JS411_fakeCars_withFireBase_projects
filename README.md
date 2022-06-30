@@ -6,11 +6,11 @@
 
 ## Class 8 Project Instructions 
 
-- We have a functioning FireBase sign up component we are adding a FireBase login page and protected routes to the FakeCars.com application. Once complete, you will be able to login to the app and you will remain logged in on page refresh and control page access.
+- We have a functioning FireBase sign up component and are adding a FireBase login page and protected routes to the FakeCars.com application. Once complete, you will be able to login to the app and remain logged in on page refresh and limit page access when logged out.
 
 - You should see a sign up button on the top-right when the app first starts. Go ahead and navigate to it proceed to Sign up a new user. Notice that it takes you to the home page. Now open the console and look at the "auth.currentUser" in the console. You should see an object with the user information indicating our account creation was successful.  
 
-- Next click the logout button and refresh the page. You will notice the "auth.currentUser" is `null` and a login button has appeared in the top right. Currently our sign up and log out work but, it is not dynamic and the login page does not connect to FireBase.  
+- Next click the logout button and refresh the page. You will notice the "auth.currentUser" is `null` and a login button has appeared in the top right. Currently our sign up and logout work but, it is not dynamic and the login page does not connect to FireBase.  
 
 - Now we need to know when the user is logged in or out. Go to `App.js` and `import {  onAuthStateChanged } from 'firebase/auth'`  write Write a `useEffect` hook for `onAuthStateChanged` and save the results in state under the appropriate comment.(don't forget all the needed imports). Pass the resulting state as a prop to the `<Navigation  user={user} />` component. Look at the logout/login dynamic render and change the correct code with your passed in prop to conditionally render logout/login. What happens?
 
