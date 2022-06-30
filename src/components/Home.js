@@ -1,7 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Card, CardContent, CardActions, Divider } from '@mui/material'
 import cars from '../cars.json'
-import { Link } from 'react-router-dom'
 
 const Home = () => {
     console.log('CARS', cars)

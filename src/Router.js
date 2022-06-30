@@ -1,26 +1,24 @@
 import React from 'react'
-import { Switch, Route, Redirect } from 'react-router'
-import cookie from 'cookie'
+import { Routes, Route, Navigate } from 'react-router'
 import Home from './components/Home'
 import About from './components/About'
 import Car from './components/Car'
 import Login from './components/Login'
+import SignUp from './components/SignUp'
 
-// Write checkAuth function here
-// Check the cookies for a cookie called "loggedIn"
-
-
-// Write ProtectedRoute function here
+// Write ProtectedRoute here 
+// It should navigate the user back to the login page if they are not logged in.
 
 
 const Router = () => {
     return (
-        <Switch>
-            <Route path="/login" component={Login} />
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/car/:id" component={Car} />
-        </Switch>
+        <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/signUp" element={<SignUp/>} />
+            <Route path="/about" element={<About/>} />
+            <Route path="/car/:id" element={<Car/>} />
+        </Routes>
     );
 };
 

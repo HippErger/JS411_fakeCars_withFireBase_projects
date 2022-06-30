@@ -1,10 +1,12 @@
-import React from 'react';
-import {createRoot} from 'react-dom/client';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import * as serviceWorker from "./serviceWorker";
+import { createRoot } from "react-dom/client";
 
-const root = createRoot(document.getElementById("root"))
+import App from "./App";
+
+import "./index.css";
+
+const root = createRoot(document.getElementById("root"));
 root.render(<App />);
 
 // If you want your app to work offline and load faster, you can change
