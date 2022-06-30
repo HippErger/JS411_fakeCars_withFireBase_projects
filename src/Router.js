@@ -1,6 +1,5 @@
 import React from 'react'
 import { Routes, Route, Navigate } from 'react-router'
-import cookie from 'cookie'
 import Home from './components/Home'
 import About from './components/About'
 import Car from './components/Car'

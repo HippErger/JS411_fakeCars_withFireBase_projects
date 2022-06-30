@@ -4,7 +4,7 @@
 
 - Clone this repo and run `npm i` and then `npm start`
 
-## Project Instructions
+## Class 8 Project Instructions 
 
 - We have a functioning FireBase sign up component we are adding a FireBase login page and protected routes to the FakeCars.com application. Once complete, you will be able to login to the app and you will remain logged in on page refresh and control page access.
 
@@ -32,4 +32,6 @@ Go back to `App.js` and Pass the resulting state as a prop called `user` to the 
 
 - Currently we can sign up new users and logout but, we want to be able to log back in. Go to the `Login` component (under `src/components/Login.js`) and look at the login function. There is a comment to fill out the login function.
 
+
+## Class 9 Project Instructions 
 

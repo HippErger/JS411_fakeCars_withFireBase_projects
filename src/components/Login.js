@@ -7,8 +7,8 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} fr
 
 const Login = () => {
   const navigate = useNavigate();
-   const [loginEmail, setLoginEmail] = useState("");
-   const [loginPassword, setLoginPassword] = useState("");
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
 
   const login = (e) => {
     e.preventDefault();
@@ -52,7 +52,7 @@ const Login = () => {
       variant="contained"
       color="primary"
     >
-      Sign Up
+      Log In
     </Button>
   </form>
 </Container>
