@@ -18,7 +18,7 @@
 
 - But does our app know we are ever logged in or out? Click on the "Home" and "About" links on the navigation bar. It looks like we can still access everything when logged out. 
 
-- In the `Router.js` file we can see a list of all our routes and paths. Write a `ProtectedRoute` component checking for the FireBase `user` under the appropriate comment.
+- In the `Router.js` file we can see a list of all our routes and paths. Under the appropriate comment Write a `ProtectedRoute` component checking for the FireBase `user` that will be passed down from the `App` component.
 
 - Replace all the element properties in our `Route` components (inside of `Routes`) with `<ProtectedRoute />` EXCEPT for the "/login" and "/signUp" route. We always want to be able to access so leave them alone.
 
