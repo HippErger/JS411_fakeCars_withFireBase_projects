@@ -12,7 +12,9 @@
 
 - Next click the logout button and refresh the page. You will notice the "auth.currentUser" is `null` and a login button has appeared in the top right. Currently our sign up and logout work but, it is not dynamic and the login page does not connect to FireBase.  
 
-- Now we need to know when the user is logged in or out. Go to `App.js` and `import {  onAuthStateChanged } from 'firebase/auth'` Write a `useEffect` hook for `onAuthStateChanged` and save the results in state under the appropriate comment.(don't forget all the needed imports). Pass the resulting state as a prop to the `<Navigation  user={user} />` component. Look at the logout/login conditional render in `Navigation.js` and change the correct code with your passed in prop to render logout/login. What happens?
+- Now we need to know when the user is logged in or out. Go to `App.js` and `import {  onAuthStateChanged } from 'firebase/auth'` Write a `useEffect` hook for `onAuthStateChanged` and save the results in state under the appropriate comment.(don't forget all the needed imports). 
+
+- Pass the resulting state from `onAuthStateChanged` as a prop to the `<Navigation  user={user} />` component. Look at the logout/login conditional render in `Navigation.js` and change the correct code with your passed in prop to render logout/login. What happens?
 
 - But does our app know we are ever logged in or out? Click on the "Home" and "About" links on the navigation bar. It looks like we can still access everything when logged out. 
 
