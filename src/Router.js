@@ -5,6 +5,7 @@ import About from './components/About'
 import Car from './components/Car'
 import Login from './components/Login'
 import SignUp from './components/SignUp'
+import Dashboard from './components/Dashboard'
 
 // Write ProtectedRoute here 
 // It should navigate the user back to the login page if they are not logged in.
@@ -17,7 +18,8 @@ const Router = () => {
         <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/login" element={<Login/>} />
-            <Route path="/signUp" element={<SignUp/>} />
+            <Route path="/signup" element={<SignUp/>} />
+            <Route path="/dashboard" element={<Dashboard/>} />
             <Route path="/about" element={<About/>} />
             <Route path="/car/:id" element={<Car/>} />
         </Routes>
