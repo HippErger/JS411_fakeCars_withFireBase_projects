@@ -7,9 +7,15 @@ import Router from "./Router";
 import "./App.css";
 
 function App() {
-  // create a useState hook to track FireBase user authentication
+  // Create a useState hook to track Firebase user authentication
   // const [user, setUser] =
-  // write a useEffect hook for onAuthStateChanged and set the user state.
+
+  // Create a useState hook to store the data we Read from Firestore
+  // const [carsData, setCarsData] =
+
+  // Write a useEffect hook for onAuthStateChanged and set the user state.
+
+  // Using a useEffect hook, create a function that will query Firestore and save the results to state.
 
   return (
     <BrowserRouter>

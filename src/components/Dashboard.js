@@ -18,7 +18,7 @@ import {
   Stack,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-import MoreVertIcon from "@mui/icons-material/MoreVert"; // import Chart from "./Chart";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 const Dashboard = () => {
   const [anchorEl, setAnchorEl] = useState(null);

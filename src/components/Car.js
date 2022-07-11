@@ -1,11 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { Container, Paper, Chip } from "@mui/material";
-import cars from "../cars.json";
+import carsData from "../cars.json";
 
-const Car = (props) => {
+const Car = () => {
   const id = useParams().id;
-  const car = cars.find((c) => c.id === Number(id));
+  const car = carsData.find((c) => c.id === Number(id));
 
   return (
     <Container maxWidth="sm" className="car-container">

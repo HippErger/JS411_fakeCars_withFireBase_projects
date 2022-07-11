@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import React from "react";
 
-const Total = (props) => {
+const Total = () => {
   return (
     <div style={{ textAlign: "center" }}>
       <Typography variant="h3">Total Cars:</Typography>

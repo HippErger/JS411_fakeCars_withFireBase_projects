@@ -52,7 +52,7 @@ export default function EditCar(props) {
         <EditIcon />
       </IconButton>
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth="xs">
-        <DialogTitle align="center">Add a New Car</DialogTitle>
+        <DialogTitle align="center">Edit Car Details</DialogTitle>
         <DialogContent>
           <Grid container spacing={2} mt={1}>
             <Grid item xs={12}>
@@ -215,7 +215,7 @@ export default function EditCar(props) {
             Cancel
           </Button>
           <Button onClick={handleSubmit} variant="contained" color="success">
-            Create New Car
+            Save Changes
           </Button>
         </DialogActions>
       </Dialog>
