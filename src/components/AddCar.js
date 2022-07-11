@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+// import {db} instance from the firebase-config file
+
+// Import necessary functions from firebase/firestore library: {collection, doc, setDoc}
 
 import {
   Chip,
@@ -52,8 +55,14 @@ export default function AddCar(props) {
     setColor("");
   };
 
+  // This function is connected to the "Add New Car" buttons "onClick" event.
+  // Make sure to make this function asynchronous
   const handleSubmit = () => {
     console.log("This is your new car:", car);
+    // Create Firestore query function here. Make sure to use async/await
+    // Also, make sure to wrap your code in a try/catch block to handle any errors
+    
+    handleClose()
   };
 
   return (
@@ -225,7 +234,7 @@ export default function AddCar(props) {
             Cancel
           </Button>
           <Button onClick={handleSubmit} variant="contained" color="success">
-            Creeate New Car
+            Create New Car
           </Button>
         </DialogActions>
       </Dialog>

@@ -42,8 +42,15 @@ export default function EditCar(props) {
     setColor("");
   };
 
+  // This function is connected to the "Save Changes" buttons "onClick" event.
+  // Make sure to make this function asynchronous
   const handleSubmit = () => {
     console.log("This is your new car:", car);
+    console.log("This is the card ID: ", props.carId)
+    // Create Firestore query function here. Make sure to use async/await
+    // Also, make sure to wrap your code in a try/catch block to handle any errors
+  
+    handleClose()
   };
 
   return (

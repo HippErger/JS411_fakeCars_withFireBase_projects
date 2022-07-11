@@ -1,4 +1,10 @@
 import React, { useState } from "react";
+
+// import the {db} instance from the 'firebase/config' file
+
+// import {doc, deleteDoc} functions from "firebase/firestore"
+
+
 import AddCar from "./AddCar";
 import Chart from "./Chart";
 import Total from "./Total";
@@ -32,9 +38,15 @@ const Dashboard = () => {
     setAnchorEl(null);
   };
 
-  const handleRemove = (anchor) => {
+  // This event handling function will be responsible for deleting a document from Firestore
+  const handleDelete = (anchor) => {
+    // The anchor is coming from the element in which we click the "MoreVert" icon
     console.log(anchor)
+    // This anchor will carry with it the "id" of the current document we clicked
     console.log(anchor.id)
+    // Create Firestore query function here. Make sure to use async/await
+    // Also, make sure to wrap your code in a try/catch block to handle any errors
+    
     handleClose();
   };
 
@@ -99,12 +111,13 @@ const Dashboard = () => {
       >
         <MenuItem>
           <EditCar
-            carId={anchorEl?.id}
-            carsData={carsData}
             setAnchorEl={setAnchorEl}
+            carsData={carsData}
+            // If anchorEl exists or is not "null", give us the id.
+            carId={anchorEl?.id}
           />
         </MenuItem>
-        <MenuItem onClick={() => handleRemove(anchorEl)}>
+        <MenuItem onClick={() => handleDelete(anchorEl)}>
           <IconButton>
             <DeleteIcon />
           </IconButton>
