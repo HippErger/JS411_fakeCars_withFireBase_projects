@@ -1,12 +1,20 @@
 import React, { useState } from "react";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogTitle from "@mui/material/DialogTitle";
+// import {db} instance from the firebase-config file
+
+// Import necessary functions from firebase/firestore library: {collection, doc, setDoc}
+
+import {
+  Chip,
+  Grid,
+  IconButton,
+  Button,
+  TextField,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle
+} from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
-import { Chip, Grid, IconButton } from "@mui/material";
 
 export default function EditCar(props) {
   const [open, setOpen] = useState(false);
@@ -46,11 +54,11 @@ export default function EditCar(props) {
   // Make sure to make this function asynchronous
   const handleSubmit = () => {
     console.log("This is your new car:", car);
-    console.log("This is the card ID: ", props.carId)
+    console.log("This is the card ID: ", props.carId);
     // Create Firestore query function here. Make sure to use async/await
     // Also, make sure to wrap your code in a try/catch block to handle any errors
-  
-    handleClose()
+
+    handleClose();
   };
 
   return (

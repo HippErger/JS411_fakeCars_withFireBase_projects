@@ -100,6 +100,20 @@ By now you should have seen a button on the "Dashboard" page which brings up a f
 
 - Look at the "handleSubmit" function, it currently only has a console log and a "handleClose" function which just closes the Dialog window that pops up. Test this "onClick" event to make sure you get your car details in the console in your live React development server. It will be an empty object, unless you typed in some details.
 
+- Make sure to create the collection reference first, then the document reference with the collection reference we created. This allows us to get the "id" of the document up-front so that we can store the "id" in the actual document. You will also need to provide that id inside the `setDoc` query when you pass in the object as the second parameter. That's if you want to provide the "id" to the actual document.
+
+    ```javascript
+    const collectionRef = collection(db, "cars");
+    const docRef = doc(collectionRef);
+    await setDoc(docRef, { ...car, id: docRef.id });
+    ```
+    >NOTE: We can substitute "addDoc" for "setDoc" if knowing the document id up-front is not as important. Usually, we do not need to store the "id" inside the document as the document title is the actual "id". "addDoc" will not need a "doc" reference, and instead, the "collection" ref will suffice.
+
+    ```javascript
+    const collectionRef = collection(db, "cars");
+    const newDoc = await addDoc(ref, car);
+    ```
+
 - Make sure to turn the function to an asynchronous function by using async/await methods. Also use a try/catch block to catch any unexpected errors that may occur during the query.
 
 - Update "carsData" *state* to include this new document/object we created. Make sure to pass the "setCarsData" function, from our "useState" hook from "App.js", as props to this component. This should update your current list without having to make another query to *Read* the list again. Alternatively, you can just make another request to Read the data.
@@ -112,7 +126,6 @@ By now you should have seen a button on the "Dashboard" page which brings up a f
 
 - Our Chart and Total should also be updated to represent the data we provided.
 
->NOTE: We can substitute "addDoc" for "setDoc" if knowing the document id up-front is not as important. Usually, we do not need to store the "id" inside the document as the document title is the actual "id". "addDoc" will not need a "doc" reference, and instead, the "collection" ref will suffice.
 
 Great Job! We can now create data and store it to the Firestore DB while also updating our current React state.
 
