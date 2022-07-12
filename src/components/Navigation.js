@@ -1,13 +1,13 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AppBar, Toolbar, IconButton, Typography } from "@mui/material";
-import { auth } from '../firebase-config';
-import { signOut} from 'firebase/auth'
+import { auth } from "../firebase-config";
+import { signOut } from "firebase/auth";
 import MenuIcon from "@mui/icons-material/Menu";
 
 const Navigation = () => {
   const navigate = useNavigate();
-  console.log("auth.currentUser:from navigation.js",auth.currentUser);
+  console.log("auth.currentUser:from navigation.js", auth.currentUser);
   return (
     <AppBar position="relative">
       <Toolbar>
@@ -25,29 +25,30 @@ const Navigation = () => {
             <Link to="/about">About</Link>
           </li>
           <li className="nav-list-item">
-            <Link to="/signUp">Sign Up</Link>
+            <Link to="/dashboard">Dashboard</Link>
           </li>
-          {auth.currentUser ? 
-                  <li
-                  className="nav-list-item"
-                  onClick={async () => {
-                  await signOut(auth);
-                  }}
-                  >
-                  Logout
-                  </li> 
-                  :
-                  <li
-                  className="nav-list-item"
-                  onClick={() => {
-                    navigate("/login");
-                  }}
-                  >
-                  login
-                  </li>
-          }
-         
-        
+          <li className="nav-list-item">
+            <Link to="/signup">Sign Up</Link>
+          </li>
+          {auth.currentUser ? (
+            <li
+              className="nav-list-item"
+              onClick={async () => {
+                await signOut(auth);
+              }}
+            >
+              Logout
+            </li>
+          ) : (
+            <li
+              className="nav-list-item"
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
+              Login
+            </li>
+          )}
         </ul>
       </Toolbar>
     </AppBar>

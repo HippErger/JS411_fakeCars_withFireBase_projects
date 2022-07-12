@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { TextField, Button, Container } from "@mui/material";
 
 import { auth } from '../firebase-config';
-import { createUserWithEmailAndPassword,  signOut} from 'firebase/auth'
+import { createUserWithEmailAndPassword} from 'firebase/auth'
 
 
 const SignUp = () => {
