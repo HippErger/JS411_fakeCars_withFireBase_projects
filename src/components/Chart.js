@@ -2,6 +2,7 @@ import { Typography } from "@mui/material";
 import React from "react";
 import { PieChart } from "react-minimal-pie-chart";
 
+// Don't forget to pass along (props) as the parameter
 const Chart = () => {
   // create variable "over" with all the cars whose horsepower is >= 200
 
@@ -11,7 +12,7 @@ const Chart = () => {
     <div style={{ height: "100%" }}>
       <PieChart
         style={{ width: "200px" }}
-        // replace the "value" values with our over and under variables.
+        // replace the "value" values with our "over" and "under" variables.
         data={[
           { title: "Over", value: 16, color: "#C13C37" },
           { title: "Under", value: 4, color: "#E38627" },

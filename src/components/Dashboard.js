@@ -26,6 +26,7 @@ import {
 import DeleteIcon from "@mui/icons-material/Delete";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
+// Make sure to pass (props) as the parameter to get access to props being pass into this Component
 const Dashboard = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -80,6 +81,7 @@ const Dashboard = () => {
           </TableRow>
         </TableHead>
         <TableBody>
+          {/* Change "carsData" to "props.carsData" */}
           {carsData.map((car) => (
             <TableRow key={car.id}>
               <TableCell component="th" scope="row">
