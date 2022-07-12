@@ -18,13 +18,13 @@ const SignUp = () => {
           registerEmail,
           registerPassword
         );
-     //   console.log("userCredential.user", userCredential.user);
+     //   console.log("userCredential.user:from SignUP.js", userCredential.user);
         navigate("/");
       } catch (error) {
         console.log(error.message);
       }
     };
-   // console.log("auth.currentUser:from Login.js",auth.currentUser);
+   // console.log("auth.currentUser:from SignUP.js",auth.currentUser);
     return (
       <div className="App">
             <Container maxWidth="sm">

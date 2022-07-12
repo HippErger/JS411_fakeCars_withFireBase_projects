@@ -277,3 +277,27 @@ try {
 
 
 ## Day 3 - Class 10 Project Instructions 
+
+1. To get started with Cloud Functions, try working through this tutorial, which starts with the required setup tasks and works through creating, testing, related functions.
+
+2. Cd into the root directory Run `firebase init functions`. For this tutorial, you can accept the default values when prompted for Firestore rules and index files. 
+
+3. We will  initialize a Firebase project in this directory For `Are you ready to proceed? (Y/n)` type `y`. 
+
+4. Next Press enter on `> Use an existing project`.
+
+5. Use the arrow keys to select your project name from FireBase.
+
+6. What language would you like to use to write Cloud Functions? (Use arrow keys) Select `javaScript`.
+
+7. Do you want to use ESLint to catch probable bugs and enforce style? (y/N) type `y`
+
+8. Do you want to install dependencies with npm now? (Y/n) `y`
+
+10. You should see A functions folder and if you look inside it notice that it has a separate package.json and node_modules.
+
+11. Our first FireBase function. look in `functions/index.js`. This is where we will write our functions. You will see a commented out function. We are going to run this function.
+
+12. 
+
+
