@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+// import {useIsAuthorized} from './../hooks/customHooks'
 // import the {db} instance from the 'firebase/config' file
 
 // import {doc, deleteDoc} functions from "firebase/firestore"
@@ -27,9 +27,11 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 // Make sure to pass (props) as the parameter to get access to props being pass into this Component
-const Dashboard = () => {
+const Dashboard = (props) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+
+
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
