@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "@firebase/firestore";
+//import { getFunctions,connectFunctionsEmulator } from 'firebase/functions';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_KEY,
@@ -19,3 +20,7 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 //Initialize Firebase Firestore
 export const db = getFirestore(app);
+
+
+// export const functions = getFunctions(app);
+// connectFunctionsEmulator(functions, "localhost", 5001);

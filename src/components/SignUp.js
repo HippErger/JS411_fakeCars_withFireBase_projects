@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { TextField, Button, Container } from "@mui/material";
-
 import { auth } from '../firebase-config';
 import { createUserWithEmailAndPassword} from 'firebase/auth'
+
+
+
 
 
 const SignUp = () => {
     const navigate = useNavigate();
     const [registerEmail, setRegisterEmail] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
+    
+  // Class 10:
+  //  const [userRole, setUserRole] = useState(null);
+
+
     const signUp = async (e) => {
       e.preventDefault();
       try {
@@ -18,13 +25,19 @@ const SignUp = () => {
           registerEmail,
           registerPassword
         );
-     //   console.log("userCredential.user", userCredential.user);
+
+     //   console.log("userCredential.user:from SignUP.js", userCredential.user);
         navigate("/");
       } catch (error) {
         console.log(error.message);
       }
     };
-   // console.log("auth.currentUser:from Login.js",auth.currentUser);
+
+   // Class 10:
+  //  const  handleSelectUserRole = (role) => {
+  //   setUserRoll(role);
+  //  }
+
     return (
       <div className="App">
             <Container maxWidth="sm">
@@ -59,6 +72,7 @@ const SignUp = () => {
               Sign Up
             </Button>
           </form>
+     
         </Container>
       </div>
     );

@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Card, CardContent, CardActions, Divider } from '@mui/material'
+
 import carsData from '../cars.json'
 
 const Home = () => {
+ 
     console.log('CARS', carsData)
     return (
         <div className="card-container">
