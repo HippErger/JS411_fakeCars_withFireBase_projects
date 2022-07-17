@@ -9,7 +9,7 @@
 
 3. Now we need to let our app know when a user is logged in or out without having to refresh the page. Go to `App.js` and `import {  onAuthStateChanged } from 'firebase/auth'` Write a `useEffect` hook for `onAuthStateChanged` and save the results in state under the appropriate comment.(don't forget all the needed imports). 
 
-4. Pass the state from `onAuthStateChanged` as a prop to the `<Navigation  user={user} />` component. Look at the logout/login conditional render in `Navigation.js` and change the correct code with your passed in prop to render logout/login conditionally. What happens?
+4. Look in `Navigation.js` We want our app to conditionaly display the login/logout without having to manaualy refresh the page. Use what you did in `App.js` from `onAuthStateChanged` as a prop to passed in and render logout/login conditionally. Test it out What happens?
 
 5. But does our app know we are ever logged in or out? Click on the "Home" and "About" links on the navigation bar. It looks like we can still access everything when logged out. 
 
