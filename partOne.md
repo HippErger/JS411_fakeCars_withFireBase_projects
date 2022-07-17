@@ -23,7 +23,7 @@
 
 10. Go back to `App.js` and Pass the resulting state as a prop called `user` all the way down to your protected route components. `<ProtectedRoute user={user} component={ About }/>`.
 
-11. Notice you can now sign up and access the pages appropriately.  Refresh the page. Were you directed back to the login page?
+11. Notice you can now sign up and access the pages appropriately.  Refresh the page. What if you log out? Were you directed back to the login page? Why?
 
 12. Currently we can sign up new users and logout but, we want to be able to log back in. Go to the `Login` component (under `src/components/Login.js`) and look at the login function. There is a comment to fill out the login function.
 
