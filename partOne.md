@@ -19,7 +19,7 @@
 
 8. Don't forget to also add the component to the `<ProtectedRoute />` element in which the Route should render. For example, if the route is "/about", we would want to pass our "About" component in the component property:`<ProtectedRoute component={ About }/>`
 
-9. If you set it up correctly upon making the changes to the `Route` component you should notice that you can no longer access any of the links in the navigation bar when logged out. They send you back to the login page because there is no Access to FireBase authentication. You need to make sure to let the router know the `user` state.
+9. If you set it up correctly upon making the changes to the `Route` component you should notice that you can no longer access any of the links in the navigation bar when logged out. They send you back to the login page because there is no Access to FireBase authentication. You need to make sure to let the `Router` know the `user` state.
 
 10. Go back to `App.js` and Pass the resulting state as a prop called `user` all the way down to your protected route components. `<ProtectedRoute user={user} component={ About }/>`.
 
