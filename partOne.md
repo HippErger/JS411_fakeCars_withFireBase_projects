@@ -9,7 +9,11 @@
 
 3. Now we need to let our app know when a user is logged in or out without having to refresh the page. Go to `App.js` and `import {  onAuthStateChanged } from 'firebase/auth'` Write a `useEffect` hook for `onAuthStateChanged` and save the results in state under the appropriate comment.(don't forget all the needed imports). 
 
+<<<<<<< HEAD
 4. Pass the `user` state in `App.js` from `onAuthStateChanged` as a prop to the `<Navigation  user={user} />` component. Look at the logout/login conditional render in `Navigation.js` and change the correct code with your passed in prop to render logout/login conditionally. What happens?
+=======
+4. Look in `Navigation.js` We want our app to conditionaly display the login/logout without having to manaualy refresh the page. Use what you did in `App.js` from `onAuthStateChanged` as a prop to passed in and render logout/login conditionally. Test it out What happens?
+>>>>>>> 409ef54c41a80fce6a4c50600b061ee78e13dd0f
 
 5. But does our app know we are ever logged in or out? Click on the "Home" and "About" links on the navigation bar. It looks like we can still access everything when logged out. 
 
@@ -19,11 +23,11 @@
 
 8. Don't forget to also add the component to the `<ProtectedRoute />` element in which the Route should render. For example, if the route is "/about", we would want to pass our "About" component in the component property:`<ProtectedRoute component={ About }/>`
 
-9. Upon making the changes to the `Route` component you should notice that you can no longer access any of the links in the navigation bar when logged out. They send you back to the login page because there is no Access to FireBase authentication. You need to make sure to let the router know the `user` state.
+9. If you set it up correctly upon making the changes to the `Route` component you should notice that you can no longer access any of the links in the navigation bar when logged out. They send you back to the login page because there is no Access to FireBase authentication. You need to make sure to let the `Router` know the `user` state.
 
-10. Go back to `App.js` and Pass the resulting state as a prop called `user` to the `<Router  user={user}/>` component. Then pass it to your `<ProtectedRoute user={user} component={ About }/>`
+10. Go back to `App.js` and Pass the resulting state as a prop called `user` all the way down to your protected route components. `<ProtectedRoute user={user} component={ About }/>`.
 
-11. Notice you can now login and access the pages appropriately.  Refresh the page. Were you directed back to the login page?
+11. Notice you can now sign up and access the pages appropriately.  Refresh the page. What if you log out? Were you directed back to the login page? Why?
 
 12. Currently we can sign up new users and logout but, we want to be able to log back in. Go to the `Login` component (under `src/components/Login.js`) and look at the login function. There is a comment to fill out the login function.
 
