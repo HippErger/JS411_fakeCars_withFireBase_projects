@@ -40,7 +40,7 @@ export default function AddCar(props) {
   };
 
   const handleDeleteFromArray = (color) => {
-    const newArr = car.Colors.filter((c) => c !== color);
+    const newArr = car.colors.filter((c) => c !== color);
     const newCar = { ...car };
     newCar.colors = newArr;
     console.log(color, newCar);

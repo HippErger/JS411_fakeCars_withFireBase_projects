@@ -25,16 +25,16 @@ export default function EditCar(props) {
   };
 
   const handleDeleteFromArray = (color) => {
-    const newArr = car.Colors.filter((c) => c !== color);
+    const newArr = car.colors.filter((c) => c !== color);
     const newCar = { ...car };
-    newCar.Colors = newArr;
+    newCar.colors = newArr;
     console.log(color, newCar);
     return setCar(newCar);
   };
 
   const handleAddToArray = (color) => {
     const newCar = { ...car };
-    newCar.Colors.push(color);
+    newCar.colors.push(color);
     console.log(color, newCar);
     setCar(newCar);
     setColor("");
