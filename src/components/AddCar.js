@@ -18,16 +18,16 @@ export default function AddCar(props) {
   const [open, setOpen] = useState(false);
   const [car, setCar] = useState({
     id: "",
-    Name: "",
-    Miles_per_Gallon: "",
-    Cylinders: "",
-    Displacement: "",
-    Horsepower: "",
-    Weight_in_lbs: "",
-    Acceleration: "",
-    Year: "",
-    Origin: "",
-    Colors: [],
+    name: "",
+    miles_per_gallon: "",
+    cylinders: "",
+    displacement: "",
+    horsepower: "",
+    weight_in_lbs: "",
+    acceleration: "",
+    year: "",
+    origin: "",
+    colors: [],
   });
   const [color, setColor] = useState("");
 
@@ -40,16 +40,16 @@ export default function AddCar(props) {
   };
 
   const handleDeleteFromArray = (color) => {
-    const newArr = car.Colors.filter((c) => c !== color);
+    const newArr = car.colors.filter((c) => c !== color);
     const newCar = { ...car };
-    newCar.Colors = newArr;
+    newCar.colors = newArr;
     console.log(color, newCar);
     return setCar(newCar);
   };
 
   const handleAddToArray = (color) => {
     const newCar = { ...car };
-    newCar.Colors.push(color);
+    newCar.colors.push(color);
     console.log(color, newCar);
     setCar(newCar);
     setColor("");
@@ -78,87 +78,87 @@ export default function AddCar(props) {
               <TextField
                 inputProps={{ fontSize: "50px" }}
                 value={car.Name}
-                id="Name"
+                id="name"
                 label="Name"
                 type="text"
                 variant="outlined"
                 size="small"
                 fullWidth
-                onChange={(e) => setCar({ ...car, Name: e.target.value })}
+                onChange={(e) => setCar({ ...car, name: e.target.value })}
               />
             </Grid>
             <Grid item xs={6}>
               <TextField
                 value={car.Miles_per_Gallon}
-                id="Miles_per_Gallon"
+                id="miles_per_gallon"
                 label="Miles Per Gallon"
                 type="number"
                 variant="outlined"
                 size="small"
                 onChange={(e) =>
-                  setCar({ ...car, Miles_per_Gallon: e.target.value })
+                  setCar({ ...car, miles_per_gallon: e.target.value })
                 }
               />
             </Grid>
             <Grid item xs={6}>
               <TextField
                 value={car.Cylinders}
-                id="Cylinders"
+                id="cylinders"
                 label="Cylinders"
                 type="number"
                 variant="outlined"
                 size="small"
-                onChange={(e) => setCar({ ...car, Cylinders: e.target.value })}
+                onChange={(e) => setCar({ ...car, cylinders: e.target.value })}
               />
             </Grid>
             <Grid item xs={6}>
               <TextField
-                value={car.Displacement}
-                id="Displacement"
+                value={car.displacement}
+                id="displacement"
                 label="Displacement"
                 type="number"
                 variant="outlined"
                 size="small"
                 onChange={(e) =>
-                  setCar({ ...car, Displacement: e.target.value })
+                  setCar({ ...car, displacement: e.target.value })
                 }
               />
             </Grid>
             <Grid item xs={6}>
               <TextField
-                value={car.Horsepower}
+                value={car.horsepower}
                 id="Horsepower"
                 label="Horsepower"
                 type="number"
                 variant="outlined"
                 size="small"
-                onChange={(e) => setCar({ ...car, Horsepower: e.target.value })}
+                onChange={(e) => setCar({ ...car, horsepower: e.target.value })}
               />
             </Grid>
             <Grid item xs={6}>
               <TextField
-                value={car.Weight_in_lbs}
-                id="Weight_in_lbs"
+                value={car.weight_in_lbs}
+                id="weight_in_lbs"
                 label="Weight (lbs)"
                 type="number"
                 variant="outlined"
                 size="small"
                 onChange={(e) =>
-                  setCar({ ...car, Weight_in_lbs: e.target.value })
+                  setCar({ ...car, weight_in_lbs: e.target.value })
                 }
               />
             </Grid>
 
             <Grid item xs={6}>
               <TextField
-                value={car.Acceleration}
-                id="Acceleration"
+                value={car.acceleration}
+                id="acceleration"
                 label="Acceleration"
                 type="number"
                 variant="outlined"
                 size="small"
                 onChange={(e) =>
-                  setCar({ ...car, Acceleration: e.target.value })
+                  setCar({ ...car, acceleration: e.target.value })
                 }
               />
             </Grid>
@@ -167,30 +167,30 @@ export default function AddCar(props) {
                 fullWidth
                 InputLabelProps={{ shrink: true }}
                 value={car.Year}
-                id="Year"
+                id="year"
                 label="Year"
                 type="date"
                 variant="outlined"
                 size="small"
-                onChange={(e) => setCar({ ...car, Year: e.target.value })}
+                onChange={(e) => setCar({ ...car, year: e.target.value })}
               />
             </Grid>
             <Grid item xs={6}>
               <TextField
-                value={car.Origin}
-                id="Origin"
+                value={car.origin}
+                id="origin"
                 label="Origin"
                 type="Origin"
                 variant="outlined"
                 size="small"
-                onChange={(e) => setCar({ ...car, Origin: e.target.value })}
+                onChange={(e) => setCar({ ...car, origin: e.target.value })}
               />
             </Grid>
             <Grid item sx={{ margin: "auto" }} xs={8}>
               <span style={{ display: "flex" }}>
                 <TextField
                   value={color}
-                  id="Color"
+                  id="color"
                   label="Add Colors"
                   type="text"
                   fullWidth
@@ -213,7 +213,7 @@ export default function AddCar(props) {
             <Grid item xs={12}>
               <h6>Current Colors: </h6>
               <span>
-                {car.Colors.map((color) => (
+                {car.colors.map((color) => (
                   <Chip
                     clickable
                     label={color}
