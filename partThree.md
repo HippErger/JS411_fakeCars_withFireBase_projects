@@ -54,7 +54,7 @@ and input the correct argument.(hint: we we want to refresh the user object to g
 
 #### `Dashboard.js`
 
-11. We only want users that can sell to see the "Add Car" button. `useIsAuthorized` should be used here to check if the user is authorized.(hint: you need the FireBase user object from the App component) As the developer you pick the authorization of this component so type a string in the argument based on the authorization we require. (hint: only sellers should see the "Add Car" button) Then use the resulting value to conditionally render <AddCar/>.
+11. We only want users that can sell to see the "Add Car" button. `useIsAuthorized` should be used here to check if the user is authorized.(hint: you need the FireBase user object from the App component) As the developer you pick the authorization of this component so type a string in the argument based on the authorization role we require for this component. Then use the resulting value to conditionally render <AddCar/>.
 
 12. Test Your app log in as both a seller and then buyer. Make sure it is working as expected.
 
