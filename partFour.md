@@ -51,7 +51,8 @@ this `{ userId: userId, likedCarsId: []}` to the database on initial signing up.
 
 8. Go to `Context/likesContext.js` file. You will see a component that is setup to wrap around children components and pass its state and props down to them.
 
-9. Since we want our state/props to be available to our entire app we want to setup the context component above our app component in the `index.js` file. 
+9. Since we want our state/props to be available to our entire app we want to setup the context component above our app component in the `index.js` file.
+ 
 Add:`import {LikedCarsProvider} from './Context/likesContext`
 Change:  `root.render(<LikedCarsProvider><App /></LikedCarsProvider>);`
 
