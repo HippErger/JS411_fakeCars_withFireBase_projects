@@ -55,4 +55,4 @@ Let's first take a look at the "firebase-config" file in the main directory of t
 
 ## Day 4 - Class 11 Queries 
 
-[Part Three Project Instructions](./partFour.md)
+[Part Four Project Instructions](./partFour.md)

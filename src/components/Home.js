@@ -13,6 +13,17 @@ import carsData from "../cars.json";
 import Query from "./Query";
 
 const Home = () => {
+
+
+  const toggleFavorite = async (carId) => {
+
+      const handleAdd = async (carId) => {
+      };
+  
+      const handledelete = async (id) => {       
+      };
+    }
+ 
   console.log("CARS", carsData);
 
   return (
@@ -43,5 +54,6 @@ const Home = () => {
     </>
   );
 };
+
 
 export default Home;
