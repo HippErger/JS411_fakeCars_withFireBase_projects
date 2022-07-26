@@ -39,6 +39,22 @@ this `{ userId: userId, likedCarsId: []}` to the database on initial signing up.
       } 
     //  console.log("user",user);
   }, [user]);
+  
+      // index.js
+    import React from "react";
+    import * as serviceWorker from "./serviceWorker";
+    import { createRoot } from "react-dom/client";
+    import App from "./App";
+    import "./index.css";
+
+    import {LikedCarsProvider} from './Context/likesContext'
+
+    const root = createRoot(document.getElementById("root"));
+    // <App /> Is Now  Child of <LikedCarsProvider>
+    root.render(<LikedCarsProvider><App /></LikedCarsProvider>);
+
+    serviceWorker.unregister();
+
 
 ```
 
