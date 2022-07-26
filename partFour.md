@@ -54,6 +54,7 @@ this `{ userId: userId, likedCarsId: []}` to the database on initial signing up.
 9. Since we want our state/props to be available to our entire app we want to setup the context component above our app component in the `index.js` file.
  
 Add:`import {LikedCarsProvider} from './Context/likesContext`
+
 Change:  `root.render(<LikedCarsProvider><App /></LikedCarsProvider>);`
 
  ```javascript
