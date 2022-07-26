@@ -73,8 +73,8 @@ Add:`import {LikedCarsProvider} from './Context/likesContext`
 
 Change:  `root.render(<LikedCarsProvider><App /></LikedCarsProvider>);`
 
- ```javascript
-    // index.js
+```javascript
+      // index.js
     import React from "react";
     import * as serviceWorker from "./serviceWorker";
     import { createRoot } from "react-dom/client";
@@ -90,7 +90,8 @@ Change:  `root.render(<LikedCarsProvider><App /></LikedCarsProvider>);`
     serviceWorker.unregister();
 
 
- ```
+```
+
 
 10. We will use the `likedExample` state in `Context/likesContext.js` and `console.log(likedExample)`  in another component to see it in action. Notice the ` <ReadLikedCarsContext.Provider value={likedExample}>` component. It was declared and created `const ReadLikedCarsContext = createContext(undefined);`  and now we will use it to pass props down.
 
