@@ -20,6 +20,12 @@ Your task will be to Allow the user upon Sign up select their intention for usin
 
 3. The boiler plate for `functions/index.js` is set up but, in `firebase-config` you need to uncomment the `getFunctions` and `connectFunctionsEmulator` and their `import`.
 
+### Component Reusability
+
+1. We are going to add an edit button to the `<Car/>` component so that when a user clicks more details they can edit if  authorized to do so. You will need to import the `<EditCar/>` component. Look at the props for it and notice you will need to set a `setAnchorEl`  prop
+`const [anchorEl, setAnchorEl] = useState(null);`  Also make sure to pass in the `carId` and `carsData` to props.
+
+
 ### Add Authorization to FakeCars app
 
 #### `SelectUserRole.js`
@@ -57,6 +63,16 @@ and input the correct argument.(hint: we we want to refresh the user object to g
 11. We only want users that can sell to see the "Add Car" button. `useIsAuthorized` should be used here to check if the user is authorized.(hint: you need the FireBase user object from the App component) As the developer you pick the authorization of this component so type a string in the argument based on the authorization role we require for this component. Then use the resulting value to conditionally render <AddCar/>.
 
 12. Test Your app log in as both a seller and then buyer. Make sure it is working as expected.
+
+#### Push Your Self Further
+Prompt 1: Create a welcome banner in the Header that says: “Here are all the cars you can buy!” for buyers and “Here are all the cars you can sell!" for sellers.
+
+
+Prompt 2: Add a “Welcome {userName}" to Nav Bar How do you do this? Figure it out.
+
+
+Prompt 3: How would you change “Welcome" to “Good morning”, “Good Afternoon”, and “Good Evening” ? Figure it out.
+
 
 
 

@@ -74,7 +74,8 @@ const Dashboard = (props) => {
         <TableHead>
           <TableRow>
             <TableCell>Id</TableCell>
-            <TableCell>Make/Model</TableCell>
+            <TableCell>Make</TableCell>
+            <TableCell>Model</TableCell>
             <TableCell>MPG</TableCell>
             <TableCell>Cylinders</TableCell>
             <TableCell>Horsepower</TableCell>
@@ -89,11 +90,12 @@ const Dashboard = (props) => {
               <TableCell component="th" scope="row">
                 {car.id}
               </TableCell>
-              <TableCell>{car.Name}</TableCell>
-              <TableCell>{car.Miles_per_Gallon}</TableCell>
-              <TableCell>{car.Cylinders}</TableCell>
-              <TableCell>{car.Horsepower}</TableCell>
-              <TableCell>{car.Colors.join(", ")}</TableCell>
+              <TableCell>{car.make}</TableCell>
+              <TableCell>{car.model}</TableCell>
+              <TableCell>{car.miles_pergGallon}</TableCell>
+              <TableCell>{car.cylinders}</TableCell>
+              <TableCell>{car.horsepower}</TableCell>
+              <TableCell>{car.colors.join(", ")}</TableCell>
               <TableCell align="center">
                 <IconButton
                   key={car.id}

@@ -12,10 +12,19 @@ const Car = () => {
   return (
     <Container maxWidth="sm" className="car-container">
       <Paper className="car-paper">
-        <h2>{car.Name}</h2>
-        {Object.keys(car).map((key, idx) => {
-          return <Chip key={idx} label={`${key}: ${car[key]}`}></Chip>;
-        })}
+        <h2>{car.make}</h2>
+        <h3>{car.model}</h3>
+        <div>
+          {Object.keys(car).map((key, idx) => {
+            return (
+              <Chip
+                style={{ margin: "5px" }}
+                key={idx}
+                label={`${key}: ${car[key]}`}
+              ></Chip>
+            );
+          })}
+        </div>
       </Paper>
     </Container>
   );
