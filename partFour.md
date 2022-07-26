@@ -27,7 +27,7 @@ this `{ userId: userId, likedCarsId: []}` to the database on initial signing up.
 
 5. Go to `App.js` for the firebase user object that contains the userId.(uid) And use that to Query `userLikedCars` collection for the matching document. Copy and paste the code below to get you started. Go to the [Documentation](https://firebase.google.com/docs/firestore/query-data/get-data) If unsure on how to query and read the database.
 
- ```javascript
+```javascript
   // App.js
   //class 11:  Query `userLikedCars` collection for the matching document based on the user Id (uid).
    useEffect(() => {
@@ -40,7 +40,7 @@ this `{ userId: userId, likedCarsId: []}` to the database on initial signing up.
     //  console.log("user",user);
   }, [user]);
 
- ```
+```
 
 
 6. Once you have retrieved the matching document with a query get the doc and iterate over it and just `console.log` it for now. `console.log(doc.id, " => ", doc.data());`
