@@ -56,7 +56,7 @@ Add:`import {LikedCarsProvider} from './Context/likesContext`
 Change:  `root.render(<LikedCarsProvider><App /></LikedCarsProvider>);`
 
  ```javascript
-// index.js
+    // index.js
     import React from "react";
     import * as serviceWorker from "./serviceWorker";
     import { createRoot } from "react-dom/client";
