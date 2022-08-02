@@ -68,7 +68,7 @@ and input the correct argument.(hint: the user oject is currently stale and not 
 Prompt 1: Create a welcome banner in the Header that says: “Here are all the cars you can buy!” for buyers and “Here are all the cars you can sell!" for sellers.
 
 
-Prompt 2: Add a “Welcome {userName}" to Nav Bar How do you do this? Figure it out.
+Prompt 2: Add a “Welcome {userEmail}" or “Welcome {userName}" to Nav Bar How do you do this? Figure it out.
 
 
 Prompt 3: How would you change “Welcome" to “Good morning”, “Good Afternoon”, and “Good Evening” ? Figure it out.
