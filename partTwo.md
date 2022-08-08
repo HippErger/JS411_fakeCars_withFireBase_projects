@@ -94,70 +94,22 @@ By now you should have seen a button on the "Dashboard" page which brings up a f
 
 1. Inside our "AddCar" component, let's begin by importing our "db" instance from our "firebase-config" file and the necessary function from the "firebase/firestore" library at the top level.
 
-2. Look at the "handleSubmit" function, it currently only has a console log and a "handleClose" function which will close the Dialog window that pops up. Test this "onClick" event to make sure you get your car details in the console in your live React development server. The log should print an object with a keys/value pairs whose values are all empty strings and an empty array, unless you typed in some details inside your form before hitting the "Create New Car" button.
+2. Look at the "handleSubmit" function, it currently has a "handleClose" function which will close the Dialog window that pops up. Test this "onClick" event to make sure you get your car details in the console in your live React development server. The log should print an object with a keys/value pairs if you typed in some details inside your form before hitting the "Create New Car" button.
 
-3. Lets create our *create* document query. Make sure to create the collection reference first, then the document reference with the collection reference we created. This allows us to get the "id" of the document up-front so that we can store the "id" in the actual document. You will also need to provide that id inside the `setDoc` query when you pass in the object as the second parameter. That's if you want to provide the "id" to the actual document.
+3. Now implement "handleSubmit". It should use the firebase `collection` function and take in both the `db` and collection name "cars". Then `addDoc` function should be called to put car from state in the database. 
 
-    ```javascript
-    const collectionRef = collection(db, "cars");
-    const docRef = doc(collectionRef);
-    await setDoc(docRef, { ...car, id: docRef.id });
-    ```
-    >NOTE: We can substitute "addDoc" for "setDoc" if knowing the document id up-front is not as important. Usually, we do not need to store the "id" inside the document as the document title is the actual "id". "addDoc" will not need a "doc" reference, and instead, the "collection" ref will suffice.
-
-    ```javascript
-    const collectionRef = collection(db, "cars");
-    const newDoc = await addDoc(ref, car);
-    ```
 
 4. Make sure to turn the function to an asynchronous function by using async/await methods. Also use a try/catch block to catch any unexpected errors that may occur during the query.
 
-5. Update "carsData" *state* to include this new document/object we created. Make sure to pass the "setCarsData" function, from our "useState" hook from "App.js", as props to this component. This should update your current list without having to make another query to *Read* the list again. Alternatively, you can just make another request to Read the data.
+5. Our database has a new entry However, our state is out of date. Remember `addDoc` returns the document added.  Update "carsData" *state* in "App.js" to include this new document/object we created. Make sure to pass the `setCarsData` function, from our "useState" hook in "App.js"  as a prop. So Use `setCarsData` to add `{ ...car, id: newDoc.id}` to the `carsData` array. (`newDoc` returns from `addDoc` you may have called it somthing else)
 
-6. We also want to set the "cars" *state* inside the current component to the initial state of just empty strings and an empty colors array. This will clear the inputs in the form.
+6. This should update your current list without having to make another query to *Read* the list again. We also want to set the "cars" *state* inside the current component to the initial state of just empty strings and an empty colors array. This will clear the inputs in the form.
 
 7. The last function call in this "handleSubmit" should be the "handleClose" function call to close the Dialog.
 
-***The function will look like this:***
+8. If successful, we should see our new "car" inside both our Firestore DB and our React app carsData state. Check to make sure both have been updated.
 
-```javascript
-const handleSubmit = async () => {
-    console.log("This is your new car:", car);
-    // Create Firestore query function here
-
-    try {
-      const collectionRef = collection(db, "cars");
-      const docRef = doc(collectionRef);
-      await setDoc(docRef, { ...car, id: docRef.id });
-
-      props.setCarsData([...props.carsData, { ...car, id: docRef.id }]);
-
-      setCar({
-        id: "",
-        Name: "",
-        Miles_per_Gallon: "",
-        Cylinders: "",
-        Displacement: "",
-        Horsepower: "",
-        Weight_in_lbs: "",
-        Acceleration: "",
-        Year: "",
-        Origin: "",
-        Colors: [],
-      });
-
-      console.log("New Car Added");
-      handleClose()
-
-    } catch (error) {
-      console.log("ERROR:", error);
-    }
-  };
-```
-
-8. If successful, we should see our new "car" inside both our Firestore DB and our React app. Check to make sure both have been updated.
-
-9. Our Chart and Total should also be updated to represent the data we provided.
+9. You will also notice on the home page and any where that uses "carsData" your added car.
 
 
 Great Job! We can now create data and store it to the Firestore DB while also updating our current React state.
