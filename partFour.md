@@ -135,7 +135,7 @@ When a user clicks a heart to like we need to update the `userLikedCars`  collec
 
  17. We now want to render the favorite cars in a list on the dashboard page. We will need the `likedCars` and use the id to find the car in `carsData` and display the model and link to the details when they click the more details link. In `FavoritesList.js` Fill in the missing  `.map((ele,indx) => `,    `primary={carsData.find().model}`, `/car/${}` code and export it to display a list of favorite cars in the dashboard.
 
- 18. Implement delete in the `toggleFavorite` favorites function.
+ 18. Implement delete in the `toggleFavorite` favorites function. You will need to check if the id exists in the like array already and if it does not call `handleAdd` else call  `handledelete`.
 
 
 
