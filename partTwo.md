@@ -57,14 +57,7 @@ const [carsData, setCarsData] = useState([])
 useEffect(() => {
 const getCars = async () => {
     const documents = await getDocs(collection(db, "cars"));
-    const documentData = documents.docs.map((document) => {
-    return {
-        ...document.data(),
-        id: document.id,
-    };
-    });
-    setCarsData(documentData);
-};
+    // FILL IN THE REST: Map over and return an array of objects to put in state 
 getCars();
 }, []);
 ```
@@ -101,7 +94,7 @@ By now you should have seen a button on the "Dashboard" page which brings up a f
 
 4. Make sure to turn the function to an asynchronous function by using async/await methods. Also use a try/catch block to catch any unexpected errors that may occur during the query.
 
-5. Our database has a new entry However, our state is out of date. Remember `addDoc` returns the document added.  Update "carsData" *state* in "App.js" to include this new document/object we created. Make sure to pass the `setCarsData` function, from our "useState" hook in "App.js"  as a prop. So Use `setCarsData` to add `{ ...car, id: newDoc.id}` to the `carsData` array. (`newDoc` returns from `addDoc` you may have called it somthing else)
+5. Our database has a new entry However, our state is out of date. Remember `addDoc` returns the document so save it in a variable for later. Next Update "carsData" *state* in "App.js" to include this new document/object we created. Make sure to pass the `setCarsData` function, from our "useState" hook in "App.js"  as a prop.  Use `setCarsData` to add/push `{ ...car, id: newDoc.id}` to the `carsData` array. (`newDoc` returns from `addDoc` you may have called it somthing else)
 
 6. This should update your current list without having to make another query to *Read* the list again. We also want to set the "cars" *state* inside the current component to the initial state of just empty strings and an empty colors array. This will clear the inputs in the form.
 
@@ -117,9 +110,18 @@ Great Job! We can now create data and store it to the Firestore DB while also up
 ### Delete
 Now that we can *Create* some data, let's get into *Deleting* some of that data. This function should be simpler than the rest.
 
-Inside our "Dashboard" component, look for the "handleDelete" function. This function takes in a parameter we called "anchor". This will be the "anchorElement" which is coming from the *MoreVert* icon that is clicked to bring up the the little *Menu*.  *Menu* is another MUI component, so be sure to check it out to understand it better. It works by displaying the *menu* on a specific element, the *anchor element*, in which we want the menu to pop up at. We can pass some string value inside that *anchor element* which we can then use for whatever we may need. In this case, we are passing the car's id as the id property so we know what document to delete by its "id". The "carId" comes from the anchor's id property, we access it by calling `anchor.id`. Let's click the delete icon on our live React server and check the console log inside this event function call so that we can see the values we are talking about. Click other *Delete* icons that comes from the *MoreVert* icon from different rows in the list. The "id" should be changing along for every different row we click.
+Inside our "Dashboard" component, look for the "handleDelete" function. This function takes in a parameter we called "anchor".
+
+This will be the "anchorElement" which is coming from the 3 dots `<IconButton key={car.id} id={car.id} onClick={handleClick}>` 
+
+that is clicked to bring up the 
+`<Menu id="basic-menu" anchorEl={anchorEl}open={open} onClose={handleClose}>`, so be sure to check it out to understand it better. 
+
+It works by displaying the *menu* on a specific element, the *anchor element*, when `anchorEl={anchorEl}` is no longer null from  `const [anchorEl, setAnchorEl] = useState(null);`. 
+
+We can pass some string value inside *anchor element*. In this case, we are passing the car's id as the id property so we know what document to delete by its "id". The "carId" comes from the anchor's id property see `IconButton` mentioned earlier.  Let's click the delete icon on our live React server and check the console log inside this event function call so that we can see the values we are talking about. Click other *Delete* icons the "id" should be changing along for every different row we click.
     
->Note: The *MoreVert* icon is the 3 dots icon under the "edit" column. When clicked, it will display a menu with 2 other icons, a "Delete" and "Edit" icon. 
+>Note: The *MoreVert* inside `IconButton` icon is the 3 dots icon under the "edit" column. When clicked, it will display a menu with 2 other icons, a "Delete" and "Edit" icon. 
 
 1. Now that we know the "id" of the document we want to *Delete*, lets build the function to carry out this *Delete* operation. Let's start by importing the necessary functions from "firebase/firestore" and our "db" instance from the "firebase-config" file. We are going to need "doc" and "deleteDoc" from the Firestore library.
 
@@ -131,20 +133,7 @@ Inside our "Dashboard" component, look for the "handleDelete" function. This fun
 
 5. The last function call in this "handleDelete" should be the "handleClose" function. This function closes the *menu* with the delete and edit icons by setting the "anchorEl" *state* to null.
 
-***Your function should look like this***
-```javascript
-  const handleRemove = async (anchor) => {
-    console.log(anchor.id);
-    try {
-      await deleteDoc(doc(db, "cars", anchor.id));
-      const newCarsData = props.carsData.filter((car) => car.id !== anchor.id);
-      props.setCarsData(newCarsData);
-      handleClose();
-    } catch (error) {
-      console.log("ERROR:", error);
-    }
-  };
-```
+
 
 We have implemented "Read", "Write", and "Delete", oh my! Next operation to implement is "Update".
 
@@ -172,23 +161,5 @@ By now, you should see that our Update icon, when clicked, brings up a Dialog wi
 
 7. The last function call in this "handleSubmit" should be the "handleClose" function call to close the Dialog and it also sets the "anchorEl" *state* to "null".
 
-***Your function should look like this***
-```javascript
-const handleSubmit = async () => {
-try {
-    const docRef = doc(db, "cars", props.carId);
-    await updateDoc(docRef, car);
-    const carIndex = props.carsData.findIndex(
-    (car) => car.id === props.carId
-    );
-    const newCarsData = [...props.carsData];
-    newCarsData[carIndex] = car;
-    props.setCarsData(newCarsData);
-    handleClose();
-} catch (error) {
-    console.log("ERROR:", error);
-}
-};
-```
 
 8. If successful, we should see our updated "car" inside both our Firestore DB and our React app. Check to make sure both have been updated.
