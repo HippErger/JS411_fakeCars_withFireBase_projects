@@ -2,7 +2,7 @@
 ## Day 4 - Class 11 Queries 
 
 ## Queries 
-.....
+Use the [Documentatoin](https://firebase.google.com/docs/firestore/query-data/queries) and your Learning app to understand quries first. 
 
 ### Add Feature: User Can Like Cars 
 
