@@ -15,7 +15,7 @@ this `{ userId: userId, likedCarsId: []}` to the database on initial signing up.
 
 #### Clickable Icon for each Car On the Home page
 
-2. Next we need some icons to click on that will change based on if they have favorite a car on the home page. We should have it already [package](https://www.npmjs.com/package/@mui/icons-material) then read the [Documentation](https://mui.com/material-ui/material-icons/) For material-icons. Find the heart icons one that is solid and one the is just an outline and import them. For now add both icons to each car so they appear after the list of car attributes. You should see the two hearts next to each-other on every car card.
+2. Next we need some icons to click on that will change based on if they have favorite a car on the home page. We should have it already [package](https://www.npmjs.com/package/@mui/icons-material)(you will see it in package.json dependencies) then read the [Documentation](https://mui.com/material-ui/material-icons/) For material-icons. Find the heart icons one that is solid and one the is just an outline and import them. For now add both icons to each car so they appear after the list of car attributes. You should see the two hearts next to each-other on every car card.
 
 3. Now we need some `onclick` functionality so that we can capture the id of the chosen car. Remember when passing in a value to an `onclick` function you need to use a function that returns a function so the value can be passed in `onClick={()=> toggleFavorite(car.id)}` This is an anonymous arrow function that returns the named function you will create. Without the outer function `toggleFavorite` would execute right away instead of when clicked. Test by `console.log()` the car Id when it is clicked.
 
