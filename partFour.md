@@ -2,7 +2,7 @@
 ## Day 4 - Class 11 Queries 
 
 ## Queries 
-Use the [Documentatoin](https://firebase.google.com/docs/firestore/query-data/queries) and your FireBase Learning app to understand quries first. Then continue with this assignment.
+Use the [Documentatoin](https://firebase.google.com/docs/firestore/query-data/queries) and your FireBase Learning app to understand quries first. Then continue with this assignment. Also, here is a [video example](https://www.youtube.com/watch?v=gEaY2GZMino) to follow that is close to a setup we already have from CRUD Pre-class.
 
 ### Add Feature: User Can Like Cars 
 
