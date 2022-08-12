@@ -32,7 +32,7 @@ this `{ userId: userId, likedCarsId: []}` to the database on initial signing up.
   //class 11:  Query `userLikedCars` collection for the matching document based on the user Id (uid).
    useEffect(() => {
     const getUsersLikedCars = async () => { 
-
+  
     };
     if(user?.uid  != null ){
         getUsersLikedCars();
@@ -40,21 +40,6 @@ this `{ userId: userId, likedCarsId: []}` to the database on initial signing up.
     //  console.log("user",user);
   }, [user]);
   
-      // index.js
-    import React from "react";
-    import * as serviceWorker from "./serviceWorker";
-    import { createRoot } from "react-dom/client";
-    import App from "./App";
-    import "./index.css";
-
-    import {LikedCarsProvider} from './Context/likesContext'
-
-    const root = createRoot(document.getElementById("root"));
-    // <App /> Is Now  Child of <LikedCarsProvider>
-    root.render(<LikedCarsProvider><App /></LikedCarsProvider>);
-
-    serviceWorker.unregister();
-
 
 ```
 
@@ -97,22 +82,24 @@ Change:  `root.render(<LikedCarsProvider><App /></LikedCarsProvider>);`
 
 11. This will work in any component but for this example we will use `Home.js`. Import our context `import {ReadLikedCarsContext} from './../Context/likesContext'` To read our username data we need to import a new hook `import React, {useContext} from 'react'`.
 
-12. At the top of the `<Home/>` component Access the props `const userLikedCars = useContext(ReadLikedCarsContext);` then `console.log("userLikedCars",userLikedCars)` it and start the app and check for the value.
+12. At the top of the `<Home/>` component Access the props `const userLikedCars = useContext(ReadLikedCarsContext);` then `console.log("userLikedCars",userLikedCars)` it and start the app and check for the value. After That experiement with the commented code and change the
+state of likesContext.
 
 ```javascript
 // Home.js
  import React, {useContext} from 'react'
 import {ReadLikedCarsContext} from './../Context/likesContext'
+//   // WE CAN CHANGE THE STATE with SetLikedCarsContext form likesContext.js
+//   // `import {SetLikedCarsContext,ReadLikedCarsContext} from './../Context/likesContext'`
 
 const Home = ({carsData}) => {
     const userLikedCars = useContext(ReadLikedCarsContext);
     console.log("userLikedCars",userLikedCars)
+    //      const setUserLikedCars = useContext(SetLikedCarsContext);
+    //      setUserLikedCars("Change values here");
+    //      console.log("userLikedCars",userLikedCars) // updated values 
 
-//   // WE CAN CHANGE THE STATE with SetLikedCarsContext form likesContext.js
-//   // `import {SetLikedCarsContext,ReadLikedCarsContext} from './../Context/likesContext'`
-//      const setUserLikedCars = useContext(SetLikedCarsContext);
-//      setUserLikedCars("Change values here");
-//      console.log("userLikedCars",userLikedCars) // updated values 
+
 ```
 
 13. After testing and understanding context proceed to `Context/likesContext.js` and switch the values from the examples to `likedCars` and `setLikedCars`. So we have a clean slate to work with.
