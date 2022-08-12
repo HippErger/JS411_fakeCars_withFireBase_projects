@@ -90,7 +90,7 @@ state of likesContext.
  import React, {useContext} from 'react'
 import {ReadLikedCarsContext} from './../Context/likesContext'
 //   // WE CAN CHANGE THE STATE with SetLikedCarsContext fromm likesContext.js
-//   // `import {SetLikedCarsContext,ReadLikedCarsContext} from './../Context/likesContext'`
+//   // `import {ReadLikedCarsContext, SetLikedCarsContext,} from './../Context/likesContext'`
 
 const Home = ({carsData}) => {
     const userLikedCars = useContext(ReadLikedCarsContext);
