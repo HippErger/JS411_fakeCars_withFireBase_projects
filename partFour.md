@@ -46,7 +46,7 @@ this `{ userId: userId, likedCarsId: []}` to the database on initial signing up.
 
 6. Once you have retrieved the matching document with a query get the doc and iterate over it and just `console.log` it for now. `console.log(doc.id, " => ", doc.data());`
 
-7.  We need to save the results of querying the `userLikedCars`  collection in state and pass it down via props to update `likedCarsId` when a car is clicked. We have been prop drilling. Passing props to every level. Now we are going to use `createContext` To set the state and automatically pass props all the way down without having to do it ourselves. There will be some slightly different code but, underneath it is working exactly the same as before.
+7.  We need to save the results of querying the `userLikedCars`  collection in state and pass it down via props to update `likedCarsId` when a car is clicked. We have been prop drilling. Passing props to every level. Instead we are going to use `createContext` To set the state and automatically pass props all the way down without having to do it ourselves. There will be some slightly different code but, underneath it is working exactly the same as before.
 
 #### Context
 
