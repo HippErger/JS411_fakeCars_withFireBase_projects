@@ -32,7 +32,7 @@ this `{ userId: userId, likedCarsId: []}` to the database on initial signing up.
   //class 11:  Query `userLikedCars` collection for the matching document based on the user Id (uid).
    useEffect(() => {
     const getUsersLikedCars = async () => { 
-  
+   // Write the rest of the code here
     };
     if(user?.uid  != null ){
         getUsersLikedCars();
