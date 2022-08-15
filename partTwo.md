@@ -58,6 +58,7 @@ useEffect(() => {
 const getCars = async () => {
     const documents = await getDocs(collection(db, "cars"));
     // FILL IN THE REST: Map over and return an array of objects to put in state 
+    }
 getCars();
 }, []);
 ```
