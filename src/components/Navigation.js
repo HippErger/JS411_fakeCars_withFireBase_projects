@@ -5,7 +5,8 @@ import { auth } from "../firebase-config";
 import { signOut } from "firebase/auth";
 import MenuIcon from "@mui/icons-material/Menu";
 
-const Navigation = ({user}) => {
+const Navigation = (props) => {
+ //CLASS 8 SETUP: access props.user and replace auth.currentUser down below we want the user to come from state and not from an imported firebase file
   const navigate = useNavigate();
   console.log("auth.currentUser:from navigation.js", auth.currentUser);
   return (
