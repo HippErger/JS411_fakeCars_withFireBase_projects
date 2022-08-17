@@ -6,6 +6,8 @@ Use the [Documentatoin](https://firebase.google.com/docs/firestore/query-data/qu
 
 ### Add Feature: User Can Like Cars 
 
+UnderStand the Above before Continuing!
+
 This will be a major feature that will utilize much that you have learned so far. From reading/writing to a database, creating collections and querying data.
 
 The expected behavior is for a user to be able to click a heart icon and save that car to the database so when the user comes back they will be able to see their saved cars on the home page and a list of them in the dashboard. In general when it comes to adding a new feature you always want to start with the data this is called data driven design.
