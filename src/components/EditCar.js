@@ -8,12 +8,14 @@ import EditIcon from "@mui/icons-material/Edit";
 
 export default function EditCar(props) {
   const [open, setOpen] = useState(false);
-
-  const [car, setCar] = useState(
-    props.carsData.find((car) => car.id === Number(props.carId))
-  );
-
   const [color, setColor] = useState("");
+  const [car, setCar] = useState();
+  
+   // Add CarsData prop to car state
+   useEffect(() => {
+    const foundCar =  props.carsData.find((car) => car.id === props.carId)
+    props.setCar(foundCar);
+  }, [prop.carsData,props.carId])
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -76,7 +78,7 @@ export default function EditCar(props) {
             <Grid item xs={6}>
               <TextField
                 inputProps={{ fontSize: "50px" }}
-                value={car.make}
+                value={car.model}
                 id="model"
                 label="Model"
                 type="text"
@@ -136,7 +138,7 @@ export default function EditCar(props) {
             </Grid>
             <Grid item xs={6}>
               <TextField
-                value={car.Weight_in_lbs}
+                value={car.weight_in_lbs}
                 id="weight_in_lbs"
                 label="Weight (lbs)"
                 type="number"
