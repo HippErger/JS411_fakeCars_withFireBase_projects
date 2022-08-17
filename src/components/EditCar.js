@@ -214,7 +214,7 @@ export default function EditCar(props) {
             <Grid item xs={12}>
               <h6>Current Colors: </h6>
               <span>
-                {car.colors.map((color) => (
+                {car?.colors?.map((color) => (
                   <Chip
                     clickable
                     label={color}
