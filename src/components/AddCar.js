@@ -19,6 +19,8 @@ export default function AddCar(props) {
   const [car, setCar] = useState({
     id: "",
     name: "",
+    make: "",
+    model: "",
     miles_per_gallon: "",
     cylinders: "",
     displacement: "",
@@ -77,19 +79,30 @@ export default function AddCar(props) {
             <Grid item xs={12}>
               <TextField
                 inputProps={{ fontSize: "50px" }}
-                value={car.Name}
+                value={car.make}
                 id="name"
-                label="Name"
+                label="Make"
                 type="text"
                 variant="outlined"
                 size="small"
                 fullWidth
-                onChange={(e) => setCar({ ...car, name: e.target.value })}
+                onChange={(e) => setCar({ ...car, make: e.target.value })}
+              />
+              <TextField
+                inputProps={{ fontSize: "50px" }}
+                value={car.model}
+                id="name"
+                label="Model"
+                type="text"
+                variant="outlined"
+                size="small"
+                fullWidth
+                onChange={(e) => setCar({ ...car, model: e.target.value })}
               />
             </Grid>
             <Grid item xs={6}>
               <TextField
-                value={car.Miles_per_Gallon}
+                value={car.miles_per_gallon}
                 id="miles_per_gallon"
                 label="Miles Per Gallon"
                 type="number"
@@ -102,7 +115,7 @@ export default function AddCar(props) {
             </Grid>
             <Grid item xs={6}>
               <TextField
-                value={car.Cylinders}
+                value={car.cylinders}
                 id="cylinders"
                 label="Cylinders"
                 type="number"
@@ -166,7 +179,7 @@ export default function AddCar(props) {
               <TextField
                 fullWidth
                 InputLabelProps={{ shrink: true }}
-                value={car.Year}
+                value={car.year}
                 id="year"
                 label="Year"
                 type="date"
