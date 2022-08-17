@@ -6,7 +6,7 @@ Use the [Documentatoin](https://firebase.google.com/docs/firestore/query-data/qu
 
 ### Add Feature: User Can Like Cars 
 
-UnderStand the Above before Continuing!
+UnderStand Queries before Continuing!
 
 This will be a major feature that will utilize much that you have learned so far. From reading/writing to a database, creating collections and querying data.
 
