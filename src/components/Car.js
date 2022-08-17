@@ -7,6 +7,7 @@ import carsData from "../cars.json";
 const Car = () => {
   const id = useParams().id;
   // Change "carsData" to "props.carsData
+  // When you change from a file to a database remember id is stored as a string in firebase
   const car = carsData.find((c) => c.id === Number(id));
 
   return (
