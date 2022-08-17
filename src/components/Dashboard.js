@@ -95,7 +95,7 @@ const Dashboard = (props) => {
               <TableCell>{car.miles_pergGallon}</TableCell>
               <TableCell>{car.cylinders}</TableCell>
               <TableCell>{car.horsepower}</TableCell>
-              <TableCell>{car.colors.join(", ")}</TableCell>
+              <TableCell>{car?.colors?.join(", ")}</TableCell>
               <TableCell align="center">
                 <IconButton
                   key={car.id}
