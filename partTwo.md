@@ -95,7 +95,7 @@ By now you should have seen a button on the "Dashboard" page which brings up a f
 
 4. Make sure to turn the function to an asynchronous function by using async/await methods. Also use a try/catch block to catch any unexpected errors that may occur during the query.
 
-5. Our database has a new entry However, our state is out of date. Remember `addDoc` returns the document so save it in a variable for later. Next Update "carsData" *state* in "App.js" to include this new document/object we created. Make sure to pass the `setCarsData` function, from our "useState" hook in "App.js"  as a prop.  Use `setCarsData` to add/push `{ ...car, id: newDoc.id}` to the `carsData` array. (`newDoc` returns from `addDoc` you may have called it somthing else)
+5. Our database has a new entry However, our state is out of date. Remember `addDoc` returns the document so save it in a variable for later. Next Update "carsData" *state* in "App.js" to include this new document/object we created. Make sure to pass the `setCarsData` function, from our "useState" hook in "App.js"  as a prop.  Use `setCarsData` to add/push/spread `{ ...car, id: newDoc.id}` to the `carsData` array. (`newDoc` returns from `addDoc` you may have called it somthing else)
 
 6. This should update your current list without having to make another query to *Read* the list again. We also want to set the "cars" *state* inside the current component to the initial state of just empty strings and an empty colors array. This will clear the inputs in the form.
 
