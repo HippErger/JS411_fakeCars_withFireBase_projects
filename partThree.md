@@ -22,7 +22,7 @@ Your task will be to Allow the user upon Sign up select their intention for usin
 
 ### Component Reusability
 
-1. We are going to add an edit button with `<EditCar/>` to the `<Car/>` component so that when a user clicks more details they can edit if  authorized to do so. You will need to import the `<EditCar/>` component. Look at the props for `<EditCar/>` and notice you will need to set a `setAnchorEl`  prop. In `<Car/>` set  `const [anchorEl, setAnchorEl] = useState(null);`  Also make sure to pass in the `carId` and `carsData` to props to `<EditCar/>`.
+1. We are going to add an edit button with `<EditCar/>` to the `<Car/>` component so that when a user clicks more details they can edit if  authorized to do so. You will need to import the `<EditCar/>` component. Look at the props for `<EditCar/>` and notice you will need to set a `setAnchorEl`  prop. In `<Car/>` set  `const [anchorEl, setAnchorEl] = useState(null);`  Also make sure to pass in the `carId` and `carsData` props to  `<EditCar/>`.
 
 
 ### Add Authorization to FakeCars app
