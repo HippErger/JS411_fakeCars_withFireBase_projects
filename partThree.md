@@ -53,7 +53,7 @@ cloud function as a string then `import` it into the correct file. (hint: the us
   > Note: The difference between a hook and a regular component is A hook returns state instead of jsx/html.
 
 Refresh it with `const idTokenResult = await user?.getIdTokenResult();` (hint: `user` is the  FireBase user object from `onAuthStateChange`) If you read the [documentation](https://firebase.google.com/docs/reference/js/v8/firebase.User#getidtokenresult)  you will see `getIdTokenResult()` takes in an argument. Read the documentation
-and input the correct argument.(hint: the user oject is currently stale and not up to date). Read the comment for more details.
+and input the correct argument.(hint: the user object is currently stale and not up to date). Read the comment for more details.
 
 9. Once complete The user object now has the claim/role attached to it. Now we need to utilize `useIsAuthorized` in places we want to restrict access.
 
