@@ -12,7 +12,7 @@ This will be a major feature that will utilize much that you have learned so far
 
 The expected behavior is for a user to be able to click a heart icon and save that car to the database so when the user comes back they will be able to see their saved cars on the home page and a list of them in the dashboard. In general when it comes to adding a new feature you always want to start with the data this is called data driven design.
 
-1. When a user Signs up a new collection will be created called `userLikedCars`. This collection will hold the `userId` and an array of `likedCarsId`. Create a function that saves
+1.  A new collection will be created called `userLikedCars` When a user Signs up. This collection will hold the `userId` and an array of `likedCarsId`. Create a function that saves
 this `{ userId: userId, likedCarsId: []}` to the database on initial signing up. After that you should Sign up a new user and check the FireStore database to see if it worked.
 
 #### Clickable Icon for each Car On the Home page
