@@ -53,6 +53,6 @@ Let's first take a look at the "firebase-config" file in the main directory of t
 [Part Three Project Instructions](./partThree.md)
 
 
-## Day 4 - Class 11 Project Instructions 
+## Day 4 - Class 11 Queries 
 
-[Part Three Project Instructions](./partFour.md)
+[Part Four Project Instructions](./partFour.md)
