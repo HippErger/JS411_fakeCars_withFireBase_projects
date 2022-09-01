@@ -1,53 +1,82 @@
+# Day 4 - Class 11 Queries
 
-## Day 4 - Class 11 Queries 
+## Queries
 
-## Queries 
-Use the [Documentatoin](https://firebase.google.com/docs/firestore/query-data/queries) and your FireBase Learning app to understand quries first.(Teach your self Queries using the documentation and our FIreBase learning app. This is how a software developer does it) Also, here is a [video example](https://www.youtube.com/watch?v=gEaY2GZMino) to follow that is close to a setup we already have from CRUD Pre-class 9. Then continue with this assignment. 
+Use the [Documentation](https://firebase.google.com/docs/firestore/query-data/queries) and your FireBase Learning app to understand queries first. Then continue with this assignment. Also, here is a [video example](https://www.youtube.com/watch?v=gEaY2GZMino) to follow that is close to a setup we already have from CRUD Pre-class.
 
-### Add Feature: User Can Like Cars 
+### Add Feature: User Can Like Cars
 
-UnderStand Queries before Continuing!
+This will be a major feature that will utilize much that you have learned so far. From reading/writing to a database, to creating collections and querying data.
 
-This will be a major feature that will utilize much that you have learned so far. From reading/writing to a database, creating collections and querying data.
+The expected behavior is for a user to be able to click a heart icon and save that car to the database so when the user comes back they will be able to see their saved cars on the home page and a list of them in the dashboard. In general, when it comes to adding a new feature you always want to start with the data. This is called data driven design.
 
-The expected behavior is for a user to be able to click a heart icon and save that car to the database so when the user comes back they will be able to see their saved cars on the home page and a list of them in the dashboard. In general when it comes to adding a new feature you always want to start with the data this is called data driven design.
-
-1.  A new collection will be created called `userLikedCars` When a user Signs up. This collection will hold the `userId` and an array of `likedCarsId`. Create a function that saves
-this `{ userId: userId, likedCarsId: []}` to the database on initial signing up. After that you should Sign up a new user and check the FireStore database to see if it worked.
+1. When a user Signs up a new collection will be created called `userLikedCars`. This collection will hold the `userId` and an array of `likedCarsIds` for each user who signs up. Create a function that saves this `{ userId: userId, likedCarsIds: []}` to the `userLikedCars` collection in your database on initial signing up. After that you should Sign up a new user and check the FireStore database to see if it worked.
 
 #### Clickable Icon for each Car On the Home page
 
-2. Next we need some icons to click on that will change based on if they have favorite a car on the home page. We should have it already [package](https://www.npmjs.com/package/@mui/icons-material)(you will see it in package.json dependencies) then read the [Documentation](https://mui.com/material-ui/material-icons/) For material-icons. Find the heart icons one that is solid and one the is just an outline and import them. For now add both icons to each car so they appear after the list of car attributes. You should see the two hearts next to each-other on every car card on the home page.
+2. Next we need some icons to click on that will change based on if they have favorited a car on the home page. We should have it already [package](https://www.npmjs.com/package/@mui/icons-material)(you will see it in package.json dependencies) then read the [Documentation](https://mui.com/material-ui/material-icons/) for material-icons. Find the heart icons--one that is solid and one the is just an outline--and import them. For now add both icons to each car so they appear after the list of car attributes. You should see the two hearts next to each other on every car card on the home page.
 
-3. Now we need some `onclick` functionality so that we can capture the id of the chosen car. Remember when passing in a value to an `onclick` function you need to use a function that returns a function so the value can be passed in `onClick={()=> toggleFavorite(car.id)}` This is an anonymous arrow function that returns the named function you will create. Without the outer function `toggleFavorite` would execute right away instead of when clicked. Test by `console.log()` the car Id when it is clicked.
+3. Now we need some `onClick` functionality so that we can capture the id of the chosen car. Remember when passing in a value to an `onClick` function you need to use an anonymous function that returns another function so the value can be passed in; it will look something like this:
 
+```javascript code below
 
-
-4. Our goal is to update the database in  `userLikedCars` collection when the car is clicked with the corresponding id. However, we do not have access to the document id in the database and we have only written to the database now we need to read it and get the `userLikedCars`  document by Querying with the userId because, we saved it in our database like this `{ userId, likedCarsId: []}` Go look at your FireBase Console and you will see a userId with a value and an empty  `likedCarsId`. 
-
-#### `App.js` and the userId(uid)
-
-5. Go to `App.js` for the firebase user object that contains the userId.(uid) And use that to Query `userLikedCars` collection for the matching document. Copy and paste the code below to get you started. Go to the [Documentation](https://firebase.google.com/docs/firestore/query-data/get-data) If unsure on how to query and read the database.
-
-```javascript
-  // App.js
-  //class 11:  Query `userLikedCars` collection for the matching document based on the user Id (uid).
-   useEffect(() => {
-    const getUsersLikedCars = async () => { 
-   // Write the rest of the code here
-    };
-    if(user?.uid  != null ){
-        getUsersLikedCars();
-      } 
-    //  console.log("user",user);
-  }, [user]);
-  
+onClick={()=> toggleFavorite(car.id)}
 
 ```
 
+This is an anonymous arrow function that returns the named function you will create. Without this extra, outer function, `toggleFavorite` would execute right away instead of when clicked. Test with a `console.log()` of the carId when it is clicked.
 
-6. Once you have retrieved the matching document with a query get the doc and iterate over it and just `console.log` it for now. `console.log(doc.id, " => ", doc.data());`
+4. Our goal is to update the database in the `userLikedCars` collection when the car with the corresponding id is clicked on. Up to this point, we have only written to the database. Now we need to read it and get the `userLikedCars` document by Querying with the userId because we saved it in our database like this:
 
+```javascript
+
+{ userId: "<the user's id>", likedCarsIds: []}
+
+```
+
+Go look at your FireBase `userLikedCars` collection, at each document in the collection. You will see two properties and values (key/value pairs): `userId`, and an empty `likedCarsIds` array.
+
+#### `App.js` and the userId(uid)
+
+5. Go to `App.js` for the firebase user object that contains the userId (user.uid). And use that to query the `userLikedCars` collection for the matching document. We then want to update our `userLikedCars` state with the results of this query. Copy and paste the code below to get you started. Go to the [Documentation](https://firebase.google.com/docs/firestore/query-data/queries) if unsure on how to query and read the database. Note: the following is a little tricky so I have included the necessary imports to guide you toward the right way to do this, as well as the line where it updates the state. Read the Docs!
+
+```javascript
+
+// App.js
+
+import { collection, getDocs, query, where } from "firebase/firestore";
+
+//class 11:  Query `userLikedCars` collection for the matching document based on the user Id (uid).
+
+useEffect(() => {
+
+  const getUsersLikedCars = async () => {
+
+    // Write the rest of the code here
+
+    // const userLikedCarsRef = <this will be a reference to the userLikedCars collection>
+
+    // const q = query(<some code goes here>)
+
+    // const queryResults = <more code here>
+
+    queryResults.forEach((doc) => setUserLikedCars(doc.data().likedCarsIds)); // you will have to loop over the result even though it's an object. Weird! This is why we RTFM!
+
+  };
+
+  if (user?.uid != null) {
+
+    getUsersLikedCars();
+
+  }
+
+}, [user]);
+
+```
+
+Hint: You will need to create a query (using the `query` and `where` methods from Firebase), then execute that query with the `getDocs()` method from Firebase, and then you will loop over the result and use the `.data()` method on each result. I actually included this last part in the code up above because it's a strange way to return the data, but that's how Firestore works so we will adapt. 
+
+6. We need to save the results of querying the `userLikedCars` collection in state (which we just did) and pass it down via props to update `likedCarsIds` when a car is clicked. We have been prop drilling. Passing props to every level. Instead we are going to use `createContext` To set the state and automatically pass props all the way down without having to do it ourselves. There will be some slightly different code but, underneath it is working exactly the same as before.
 
 #### Context
 
